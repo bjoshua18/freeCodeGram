@@ -17,4 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Muestra la página de perfil de un usuario
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
+
+// Muestra la página de un post concreto
+Route::get('/p/{post}', 'PostsController@show');
+// Formulario para crear un post
+Route::get('/p/create', 'PostsController@create');
+// Para guardar el post
+Route::post('/p', 'PostsController@store');
