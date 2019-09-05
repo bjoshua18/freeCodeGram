@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post('follow/{user}', 'FollowsController@store');
+
 // Muestra la página de perfil de un usuario
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 // Formulario para editar el perfil
